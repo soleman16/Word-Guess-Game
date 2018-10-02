@@ -1,6 +1,5 @@
-body, html {
+body, htm {
     height: 100%;
-    margin: 0;
 }
 
 .bg {
@@ -16,4 +15,11 @@ body, html {
     height: 100%; 
 
     opacity: .5;
+}
+
+.contrast { 
+    background-color: white;
+    color: black; 
+    padding: 0.5rem;
+    width: 30%;
 }

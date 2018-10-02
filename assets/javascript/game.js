@@ -1,29 +1,29 @@
 var game = {
     wins : 0,
     numberOfGuessesRemaining : 10,
-    lettersGuessed : "",
+    lettersGuessed : [],
     currentPlayer : {},
     wordDisplay : "",
     isWinner : false,
     players : [
         {
-            fullName: "Tom Brady",
+            fullName: "TOM BRADY",
             imageLocation: "assets/images/tom_brady.png"
         },
         {
-            fullName: "Drew Brees",
+            fullName: "DREW BREES",
             imageLocation: "assets/images/drew_brees.png"
         },
         {
-            fullName: "Ezekiel Elliot",
+            fullName: "EZEKIEL ELLIOT",
             imageLocation: "assets/images/ezekiel_elliot.png"
         },
         {
-            fullName: "Antonio Brown",
+            fullName: "ANTONIO BROWN",
             imageLocation: "assets/images/antonio_brown.png"
         },
         {
-            fullName: "Andrew Luck",
+            fullName: "ANDREW LUCK",
             imageLocation: "assets/images/andrew_luck.png"
         },
     ],
@@ -42,13 +42,13 @@ var game = {
      * Resets the variables for a new game
      */
     startNewGame : function() {
-        this.lettersGuessed = "";
+        this.lettersGuessed = [];
         this.currentPlayer = this.getNewPlayer();
         this.numberOfGuessesRemaining = 10;
         this.isWinner = false;
         this.wordDisplay = mask(this.currentPlayer.fullName);
         this.updateHTML();
-        this.displayImage(this.currentPlayer.imageLocation);
+        this.displayImage("assets/images/question-mark-face.jpg");
     },
     /**
      * 
@@ -57,31 +57,29 @@ var game = {
      * Updates the following depending if the letter exists or not:
      * If letter exists: 
      *      - The word display
-     *      - The number of wins - if the player guesses all the letters
-     *      - Plays audio indicating a correct letter was guessed
+     *      - The number of wins - if the player guesses the nfl player
+     *      - Plays audio - if the player guesses the correct nfl player
      * 
      * If letter doesn't exist:
      *      - The number of guesses is decremented
      */
     updateGame : function(userInput) {
 
-        // append the user input the letters guessed
-        this.lettersGuessed = this.lettersGuessed + userInput;
+        // add the user input to the lettersGuessed array
+        this.lettersGuessed.push(userInput);
 
         // updates the display if the user guessed a correct
         // letter, otherwise the word display remains unchaged
         var wordDisplayUpdated = this.updateWordDisplay(userInput);
 
         if(wordDisplayUpdated) {
-
-            // play audio when the user guesses a correct letter
-            this.playAudio("assets/audio/Touchdown!.mp4");
-
-            //check to see if the user one
+            //check to see if the user won
             if (this.isWordGuessed()) {
+                // play audio when the user guesses the player
+                this.playAudio("assets/audio/Touchdown!.mp4");
                 this.isWinner = true;
-                this.wins++;
-                this.displayImage(assets/images/question-mark-face.jpg);
+                this.wins++; 
+                this.displayImage(this.currentPlayer.imageLocation);
             }
         }
         // user guessed a letter that does not exist so we need to 
@@ -130,22 +128,24 @@ var game = {
      * Plays a quick soundbite
      */
     playAudio : function(audioLocation) {
+        console.log("+++++++++++++++++++++++++++++++++++++++++++++");
         var audio = new Audio(audioLocation);
-        audio.play();
+        audio.play(50000);
     },
     displayImage : function(imageLocation) {
         document.getElementById("player-image").src = imageLocation;
     },
     isValidInput : function(userInput) {
         var isValid = true;
-        // if the letter was already guessed display an alert box
-        if (getIndicesOf(userInput, this.lettersGuessed).length > 0) {
-            alert("'" + userInput + "' " + "was already guessed");
+         // invalid input, display an alert message
+        if(!isLetter(userInput)) {
+            alert("'" + userInput + "' " + "is invalid")
             isValid = false;
         }
-         // invalid input, display an alert message
-        else if(!isLetter(userInput)) {
-            alert("'" + userInput + "' " + "is invalid")
+        // user already guessed the inputted letter, display an alert message
+        // notifying them of this
+        else if (this.lettersGuessed.indexOf(userInput.toUpperCase()) > -1) {
+            alert("'" + userInput + "' " + "was already guessed");
             isValid = false;
         }
        
@@ -155,7 +155,8 @@ var game = {
         document.getElementById("wins").innerHTML = this.wins;
         document.getElementById("current-word").innerHTML = this.wordDisplay;
         document.getElementById("guesses-remaining").innerHTML = this.numberOfGuessesRemaining;
-        document.getElementById("letters-guessed").innerHTML = this.lettersGuessed;
+        // removes commas from array
+        document.getElementById("letters-guessed").innerHTML = this.lettersGuessed.join(" ");
     },
     /**
      * Writes all variables to the console. Utility method for debugging
@@ -186,20 +187,19 @@ window.onload = function() {
     document.onkeyup = function(event) {
 
         if (game.numberOfGuessesRemaining === 0 || game.isWinner) {
-        game.startNewGame();
+            game.startNewGame();
         }
 
         // Determines which key was pressed.
         var userInput = event.key;
 
         if(game.isValidInput(userInput)) {
-            game.updateGame(userInput);
+            // if valid uppercase the user input
+            game.updateGame(userInput.toUpperCase());
             game.updateHTML();
             // using this for debugging
             game.logOutput();
         }
     }
-
 }
-
 /************************************* Start Game ***************************************************/

@@ -1,25 +1,18 @@
-body, htm {
-    height: 100%;
+html, body {
+    border: 0;
+    background-color: #ccc;
+    margin: auto;
+    padding: 0;
 }
 
 .bg {
-    /* The image used */
-    background-image: url("../images/nfl.gif");
-
     /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    /* Full height */
-    height: 100%; 
-
-    opacity: .5;
-}
-
-.contrast { 
-    background-color: white;
-    color: black; 
-    padding: 0.5rem;
-    width: 30%;
+    background-image: url("../images/nfl.gif");
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-size: cover; -ms-background-size: cover; -o-background-size: cover; -moz-background-size: cover ;-webkit-background-size: cover;
+    background-position: center; 
+    height: auto;
+    max-width: 800px;
+    min-width: 350px;
 }

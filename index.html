@@ -10,21 +10,41 @@
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
     <script src="assets/javascript/stringUtil.js"></script>
     <script src="assets/javascript/game.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </head>
 <body>
-    <div class="container-fluid bg m-0 p-0 mx-auto h-100">
+    <div class="container-fluid bg m-0 p-0 mx-auto">
         <div class="row container-fluid mx-auto">
             <div class="col-md-2"></div>
             <div class="col-md-8 col-12 mt-5 mb-auto" >
-                <div class="card container-fluid mx-auto" style="max-width: 800px;">
+                <div class="card container-fluid mx-auto mb-0 border-0" style="max-width: 800px">
                     <h1 class="lead text-center p-3">Press any letter to get started!</h1>
                     <ul class="list-group">
-                            <li class="list-group-item mb-1">Wins:  <span id="wins"></span></li>
-                            <li class="list-group-item mb-1">Current Word:  <span id="current-word" style="letter-spacing: 10px"></span></li>
-                            <li class="list-group-item mb-1">Number of Guesses Remaining:  <span id="guesses-remaining"></span></li>
-                            <li class="list-group-item mb-1">Letter Already Guessed:  <span id="letters-guessed" style="letter-spacing: 10px"></span></li>
+                            <li class="list-group-item mb-1">Wins:<span id="wins" class="info"></span></li>
+                            <li class="list-group-item mb-1">Current Player:<span id="current-word" class="info" style="letter-spacing: 10px"></span></li>
+                            <li class="list-group-item mb-1">Number of Guesses Remaining:<span id="guesses-remaining" class="info"></span></li>
+                            <li class="list-group-item mb-1">Letter Already Guessed:<span id="letters-guessed" class="info" style="letter-spacing: 10px"></span></li>
                     </ul>  
                     <img id="player-image" class="img-fluid mx-auto" style="width: 175px" src="assets/images/question-mark-face.jpg"/>
+                </div>
+                <div id="player-stats" class="card container-fluid mx-auto mt-0 border-0 mb-5" style="max-width: 800px;">
+                    <ul class="list-group">
+                        <li class="list-group-item mb-1">Team:<span id="team" class="info"></span></li>
+                        <li class="list-group-item mb-1">Jersey Number:<span id="jersey-number" class="info"></span></li>
+                        <li class="list-group-item mb-1">Position:<span id="position" class="info"></span></li>
+                        <li class="list-group-item mb-1">Games Played:<span id="games-played" class="info"></span></li>
+                        <li class="list-group-item mb-1">Passing Yards:<span id="passing-yards" class="info"></span></li>
+                        <li class="list-group-item mb-1">Passing Touchdowns:<span id="passing-touchdowns" class="info"></span></li>
+                        <li class="list-group-item mb-1">Interceptions:<span id="interceptions" class="info"></span></li>
+                        <li class="list-group-item mb-1">Rushing Attempts:<span id="rushing-attempts" class="info"></span></li>
+                        <li class="list-group-item mb-1">Rushing Yards:<span id="rushing-yards" class="info"></span></li>
+                        <li class="list-group-item mb-1">Rushing Touchdowns:<span id="rushing-touchdowns" class="info"></span></li>
+                        <li class="list-group-item mb-1">Receptions:<span id="receptions" class="info"></span></li>
+                        <li class="list-group-item mb-1">Receiving Yards:<span id="receiving-yards" class="info"></span></li>
+                        <li class="list-group-item mb-1">Receiving Touchdowns:<span id="receiving-touchdowns" class="info"></span></li>
+                        <li class="list-group-item mb-1">Fumbles Lost:<span id="fumbles-lost" class="info"></span></li>
+                        <li class="list-group-item mb-1">Fantasy Points (PPR):<span id="fantasy-points-ppr" class="info"></span></li>
+                    </ul>  
                 </div>
             </div>
             <div class="col-md-2"></div>

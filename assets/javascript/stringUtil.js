@@ -3,7 +3,7 @@
  * @param {*} str - string
  * 
  * Takes @param str as string arugment and replaces all characters with underscores '_',
- * unless the character is a space ' ', in which case the space will be replaced with a '/'.
+ * unless the character is a space ' ', in which case the space will remain'.
  *
  */
 function mask(str) {
@@ -12,7 +12,7 @@ function mask(str) {
 
     for(var i = 0; i < str.length; i++) {
         if (str[i] === " ") {
-            maskedName = maskedName + "/";
+            maskedName = maskedName + " ";
         }
         else
         {

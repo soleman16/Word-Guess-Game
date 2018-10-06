@@ -1,6 +1,6 @@
 html, body {
     border: 0;
-    height: auto;
+    height: 100vh;
     margin: 0;
     min-width: 400px;
     padding: 0;
@@ -13,4 +13,11 @@ html, body {
     background-size: cover !important;
     background-size: cover; -ms-background-size: cover; -o-background-size: cover; -moz-background-size: cover ;-webkit-background-size: cover;
     background-position: center; 
+    height: 100vh;
+    overflow: auto;
+}
+
+.info {
+    font-family: “Lucida Console”, Monaco, monospace;
+    margin-left: 20px;
 }

@@ -5,86 +5,408 @@ var game = {
     currentPlayer : {},
     wordDisplay : "",
     isGameOver : false,
+    // need a more elegant solution instead of creating a new object for every player
     players : [
         {
             fullName: "TOM BRADY",
-            imageLocation: "assets/images/tom_brady.png"
+            imageLocation: "assets/images/tom_brady.png",
+            playerId: 4314,
+            team: "",
+            number: "",
+            position: "",
+            gamesPlayed: "",
+            passingYards: "",
+            passingTouchdowns: "",
+            interceptions: "",
+            rushingAttempts: "",
+            rushingYards: "",
+            rushingTouchdowns: "",
+            receptions: "",
+            receivingYards: "",
+            receivingTouchdowns: "",
+            fumblesLost: "",
+            fantasyPointsPPR: ""
         },
         {
             fullName: "DREW BREES",
-            imageLocation: "assets/images/drew_brees.png"
+            imageLocation: "assets/images/drew_brees.png",
+            playerId: 7242,
+            team: "",
+            number: "",
+            position: "",
+            gamesPlayed: "",
+            passingYards: "",
+            passingTouchdowns: "",
+            interceptions: "",
+            rushingAttempts: "",
+            rushingYards: "",
+            rushingTouchdowns: "",
+            receptions: "",
+            receivingYards: "",
+            receivingTouchdowns: "",
+            fumblesLost: "",
+            fantasyPointsPPR: ""
         },
         {
             fullName: "EZEKIEL ELLIOT",
-            imageLocation: "assets/images/ezekiel_elliot.png"
+            imageLocation: "assets/images/ezekiel_elliot.png",
+            playerId: 17923,
+            team: "",
+            number: "",
+            position: "",
+            gamesPlayed: "",
+            passingYards: "",
+            passingTouchdowns: "",
+            interceptions: "",
+            rushingAttempts: "",
+            rushingYards: "",
+            rushingTouchdowns: "",
+            receptions: "",
+            receivingYards: "",
+            receivingTouchdowns: "",
+            fumblesLost: "",
+            fantasyPointsPPR: ""
+
         },
         {
             fullName: "ANTONIO BROWN",
-            imageLocation: "assets/images/antonio_brown.png"
+            imageLocation: "assets/images/antonio_brown.png",
+            playerId: 11056,
+            team: "",
+            number: "",
+            position: "",
+            gamesPlayed: "",
+            passingYards: "",
+            passingTouchdowns: "",
+            interceptions: "",
+            rushingAttempts: "",
+            rushingYards: "",
+            rushingTouchdowns: "",
+            receptions: "",
+            receivingYards: "",
+            receivingTouchdowns: "",
+            fumblesLost: "",
+            fantasyPointsPPR: ""
         },
         {
             fullName: "ANDREW LUCK",
-            imageLocation: "assets/images/andrew_luck.png"
+            imageLocation: "assets/images/andrew_luck.png",
+            playerId: 14008,
+            team: "",
+            number: "",
+            position: "",
+            gamesPlayed: "",
+            passingYards: "",
+            passingTouchdowns: "",
+            interceptions: "",
+            rushingAttempts: "",
+            rushingYards: "",
+            rushingTouchdowns: "",
+            receptions: "",
+            receivingYards: "",
+            receivingTouchdowns: "",
+            fumblesLost: "",
+            fantasyPointsPPR: ""
         },
         {
             fullName: "KAREEM HUNT",
-            imageLocation: "assets/images/kareem_hunt.png"
+            imageLocation: "assets/images/kareem_hunt.png",
+            playerId: 18944,
+            team: "",
+            number: "",
+            position: "",
+            gamesPlayed: "",
+            passingYards: "",
+            passingTouchdowns: "",
+            interceptions: "",
+            rushingAttempts: "",
+            rushingYards: "",
+            rushingTouchdowns: "",
+            receptions: "",
+            receivingYards: "",
+            receivingTouchdowns: "",
+            fumblesLost: "",
+            fantasyPointsPPR: ""
         },
         {
             fullName: "TODD GURLEY",
-            imageLocation: "assets/images/todd_gurley.png"
+            imageLocation: "assets/images/todd_gurley.png",
+            playerId: 16771,
+            team: "",
+            number: "",
+            position: "",
+            gamesPlayed: "",
+            passingYards: "",
+            passingTouchdowns: "",
+            interceptions: "",
+            rushingAttempts: "",
+            rushingYards: "",
+            rushingTouchdowns: "",
+            receptions: "",
+            receivingYards: "",
+            receivingTouchdowns: "",
+            fumblesLost: "",
+            fantasyPointsPPR: ""
         },
         {
             fullName: "AARON RODGERS",
-            imageLocation: "assets/images/aaron_rogers.png"
+            imageLocation: "assets/images/aaron_rodgers.png",
+            playerId: 2593,
+            team: "",
+            number: "",
+            position: "",
+            gamesPlayed: "",
+            passingYards: "",
+            passingTouchdowns: "",
+            interceptions: "",
+            rushingAttempts: "",
+            rushingYards: "",
+            rushingTouchdowns: "",
+            receptions: "",
+            receivingYards: "",
+            receivingTouchdowns: "",
+            fumblesLost: "",
+            fantasyPointsPPR: ""
         },
         {
             fullName: "ALVIN KAMARA",
-            imageLocation: "assets/images/alvin_kaxsmara.png"
+            imageLocation: "assets/images/alvin_kamara.png",
+            playerId: 18878,
+            team: "",
+            number: "",
+            position: "",
+            gamesPlayed: "",
+            passingYards: "",
+            passingTouchdowns: "",
+            interceptions: "",
+            rushingAttempts: "",
+            rushingYards: "",
+            rushingTouchdowns: "",
+            receptions: "",
+            receivingYards: "",
+            receivingTouchdowns: "",
+            fumblesLost: "",
+            fantasyPointsPPR: ""
         },
         {
             fullName: "MELVIN GORDON",
-            imageLocation: "assets/images/melvin_gordon.png"
+            imageLocation: "assets/images/melvin_gordon.png",
+            playerId: 16776,
+            team: "",
+            number: "",
+            position: "",
+            gamesPlayed: "",
+            passingYards: "",
+            passingTouchdowns: "",
+            interceptions: "",
+            rushingAttempts: "",
+            rushingYards: "",
+            rushingTouchdowns: "",
+            receptions: "",
+            receivingYards: "",
+            receivingTouchdowns: "",
+            fumblesLost: "",
+            fantasyPointsPPR: ""
         },
         {
             fullName: "ADAM THIELEN",
-            imageLocation: "assets/images/adam_thielen.png"
+            imageLocation: "assets/images/adam_thielen.png",
+            playerId: 15534,
+            team: "",
+            number: "",
+            position: "",
+            gamesPlayed: "",
+            passingYards: "",
+            passingTouchdowns: "",
+            interceptions: "",
+            rushingAttempts: "",
+            rushingYards: "",
+            rushingTouchdowns: "",
+            receptions: "",
+            receivingYards: "",
+            receivingTouchdowns: "",
+            fumblesLost: "",
+            fantasyPointsPPR: ""
         },
         {
             fullName: "SAQUON BARKLEY",
-            imageLocation: "assets/images/saquon_barkley.png"
+            imageLocation: "assets/images/saquon_barkley.png",
+            playerId: 19766,
+            team: "",
+            number: "",
+            position: "",
+            gamesPlayed: "",
+            passingYards: "",
+            passingTouchdowns: "",
+            interceptions: "",
+            rushingAttempts: "",
+            rushingYards: "",
+            rushingTouchdowns: "",
+            receptions: "",
+            receivingYards: "",
+            receivingTouchdowns: "",
+            fumblesLost: "",
+            fantasyPointsPPR: ""
         },
         {
             fullName: "GOLDEN TATE",
-            imageLocation: "assets/images/golden_tate.png"
+            imageLocation: "assets/images/golden_tate.png",
+            playerId: 11611,
+            team: "",
+            number: "",
+            position: "",
+            gamesPlayed: "",
+            passingYards: "",
+            passingTouchdowns: "",
+            interceptions: "",
+            rushingAttempts: "",
+            rushingYards: "",
+            rushingTouchdowns: "",
+            receptions: "",
+            receivingYards: "",
+            receivingTouchdowns: "",
+            fumblesLost: "",
+            fantasyPointsPPR: ""
         },
         {
             fullName: "DEANDRE HOPKINS",
-            imageLocation: "assets/images/deandre_hopkins.png"
+            imageLocation: "assets/images/deandre_hopkins.png",
+            playerId: 14986,
+            team: "",
+            number: "",
+            position: "",
+            gamesPlayed: "",
+            passingYards: "",
+            passingTouchdowns: "",
+            interceptions: "",
+            rushingAttempts: "",
+            rushingYards: "",
+            rushingTouchdowns: "",
+            receptions: "",
+            receivingYards: "",
+            receivingTouchdowns: "",
+            fumblesLost: "",
+            fantasyPointsPPR: ""
         },
         {
             fullName: "JULIO JONES",
-            imageLocation: "assets/images/julio_jones.png"
+            imageLocation: "assets/images/julio_jones.png",
+            playerId: 13291,
+            team: "",
+            number: "",
+            position: "",
+            gamesPlayed: "",
+            passingYards: "",
+            passingTouchdowns: "",
+            interceptions: "",
+            rushingAttempts: "",
+            rushingYards: "",
+            rushingTouchdowns: "",
+            receptions: "",
+            receivingYards: "",
+            receivingTouchdowns: "",
+            fumblesLost: "",
+            fantasyPointsPPR: ""
         },
         {
             fullName: "ROB GRONKOWSKI",
-            imageLocation: "assets/images/rob_gronkowski.png"
+            imageLocation: "assets/images/rob_gronkowski.png",
+            playerId: 10974,
+            team: "",
+            number: "",
+            position: "",
+            gamesPlayed: "",
+            passingYards: "",
+            passingTouchdowns: "",
+            interceptions: "",
+            rushingAttempts: "",
+            rushingYards: "",
+            rushingTouchdowns: "",
+            receptions: "",
+            receivingYards: "",
+            receivingTouchdowns: "",
+            fumblesLost: "",
+            fantasyPointsPPR: ""
         },
         {
             fullName: "TRAVIS KELCE",
-            imageLocation: "assets/images/travis_kelce.png"
+            imageLocation: "assets/images/travis_kelce.png",
+            playerId: 15048,
+            team: "",
+            number: "",
+            position: "",
+            gamesPlayed: "",
+            passingYards: "",
+            passingTouchdowns: "",
+            interceptions: "",
+            rushingAttempts: "",
+            rushingYards: "",
+            rushingTouchdowns: "",
+            receptions: "",
+            receivingYards: "",
+            receivingTouchdowns: "",
+            fumblesLost: "",
+            fantasyPointsPPR: ""
         },
         {
             fullName: "DAVANTE ADAMS",
-            imageLocation: "assets/images/davante_adams.png"
+            imageLocation: "assets/images/davante_adams.png",
+            playerId: 16470,
+            team: "",
+            number: "",
+            position: "",
+            gamesPlayed: "",
+            passingYards: "",
+            passingTouchdowns: "",
+            interceptions: "",
+            rushingAttempts: "",
+            rushingYards: "",
+            rushingTouchdowns: "",
+            receptions: "",
+            receivingYards: "",
+            receivingTouchdowns: "",
+            fumblesLost: "",
+            fantasyPointsPPR: ""
         },
         {
             fullName: "CAM NEWTON",
-            imageLocation: "assets/images/cam_newton.png"
+            imageLocation: "assets/images/cam_newton.png",
+            playerId: 13320,
+            team: "",
+            number: "",
+            position: "",
+            gamesPlayed: "",
+            passingYards: "",
+            passingTouchdowns: "",
+            interceptions: "",
+            rushingAttempts: "",
+            rushingYards: "",
+            rushingTouchdowns: "",
+            receptions: "",
+            receivingYards: "",
+            receivingTouchdowns: "",
+            fumblesLost: "",
+            fantasyPointsPPR: ""
         },
         {
             fullName: "SONY MICHEL",
-            imageLocation: "assets/images/sony_michel.png"
+            imageLocation: "assets/images/sony_michel.png",
+            playerId: 19828,
+            team: "",
+            number: "",
+            position: "",
+            gamesPlayed: "",
+            passingYards: "",
+            passingTouchdowns: "",
+            interceptions: "",
+            rushingAttempts: "",
+            rushingYards: "",
+            rushingTouchdowns: "",
+            receptions: "",
+            receivingYards: "",
+            receivingTouchdowns: "",
+            fumblesLost: "",
+            fantasyPointsPPR: ""
         },
     ],
     /**
@@ -119,6 +441,7 @@ var game = {
      *      - The word display
      *      - The number of wins - if the player guesses the nfl player
      *      - Plays audio - if the player guesses the correct nfl player
+     *      - Displays the players stats
      * 
      * If letter doesn't exist:
      *      - The number of guesses is decremented
@@ -140,6 +463,7 @@ var game = {
                 this.isGameOver = true;
                 this.wins++; 
                 this.displayImage(this.currentPlayer.imageLocation);
+                this.retrievePlayerData();
             }
         }
         // user guessed a letter that does not exist so we need to 
@@ -232,20 +556,89 @@ var game = {
         return isValid;
     },
     /**
+     * Retrieves stats about the current player via an ajax call. This
+     * is the only part of the application where I used jQuery. I made the call
+     * synchronous although I know this is frowned up.
+     * 
+     * TODO: 
+     * 
+     * - Need to understand why my ajax call does not have scope to global
+     * variables.
+     * 
+     * - Need to put in some error handling in case the ajax call is unsucessful
+     */
+    retrievePlayerData: function() {
+        var currentPlayer = this.currentPlayer;
+        var callback = this.mapPlayerData;
+        $.ajax({
+            url: "https://api.fantasydata.net/v3/nfl/stats/json/PlayerSeasonStatsByPlayerID/2018/" + 
+            this.currentPlayer.playerId,
+            // api keys (unique to my account) - this should not be in the source code
+            headers: { 'Ocp-Apim-Subscription-Key': '0f4c5936b24a49d4b8e7b9f6e1c6c81c' },
+            async: false,
+            success: function(result) {
+                callback(result[0], currentPlayer);
+            }
+        });
+    },
+    /**
+     * Maps player data onto the current player
+     */
+    mapPlayerData : function(result, currentPlayer){
+        currentPlayer.team = result.Team;
+        currentPlayer.number = result.Number;
+        currentPlayer.position = result.Position;
+        currentPlayer.gamesPlayed = result.Played
+        currentPlayer.passingYards = result.PassingYards;
+        currentPlayer.passingTouchdowns = result.PassingTouchdowns;
+        currentPlayer.interceptions = result.PassingInterceptions;
+        currentPlayer.rushingAttempts = result.RushingAttempts;
+        currentPlayer.rushingYards = result.RushingYards;
+        currentPlayer.rushingTouchdowns = result.RushingTouchdowns;
+        currentPlayer.receptions = result.Receptions;
+        currentPlayer.receivingYards = result.ReceivingYards;
+        currentPlayer.receivingTouchdowns = result.ReceivingTouchdowns;
+        currentPlayer.fumblesLost = result.FumblesLost;
+        currentPlayer.fantasyPointsPPR = result.FantasyPointsPPR;
+        return currentPlayer;
+    },
+    /**
      * Updates the HTML on the page
      */
     updateHTML : function() {
         document.getElementById("wins").innerHTML = this.wins;
         document.getElementById("current-word").innerHTML = this.wordDisplay;
         document.getElementById("guesses-remaining").innerHTML = this.numberOfGuessesRemaining;
+        document.getElementById("letters-guessed").innerHTML = this.lettersGuessed;
+        document.getElementById("player-stats").style.display = "none";
         // removes commas from array
-        document.getElementById("letters-guessed").innerHTML = this.lettersGuessed.join("");
+        if(this.isWordGuessed()){
+            document.getElementById("team").innerHTML = this.currentPlayer.team;
+            document.getElementById("jersey-number").innerHTML = this.currentPlayer.number;
+            document.getElementById("position").innerHTML = this.currentPlayer.position;
+            document.getElementById("games-played").innerHTML = this.currentPlayer.gamesPlayed;
+            document.getElementById("passing-yards").innerHTML = this.currentPlayer.passingYards;
+            document.getElementById("passing-touchdowns").innerHTML = this.currentPlayer.passingTouchdowns;
+            document.getElementById("interceptions").innerHTML = this.currentPlayer.interceptions;
+            document.getElementById("rushing-attempts").innerHTML = this.currentPlayer.rushingAttempts;
+            document.getElementById("rushing-yards").innerHTML = this.currentPlayer.rushingYards;
+            document.getElementById("rushing-touchdowns").innerHTML = this.currentPlayer.rushingTouchdowns;
+            document.getElementById("receptions").innerHTML = this.currentPlayer.receptions;
+            document.getElementById("receiving-yards").innerHTML = this.currentPlayer.receivingYards;
+            document.getElementById("receiving-touchdowns").innerHTML = this.currentPlayer.receivingTouchdowns;
+            document.getElementById("fumbles-lost").innerHTML = this.currentPlayer.fumblesLost;
+            document.getElementById("fantasy-points-ppr").innerHTML = this.currentPlayer.fantasyPointsPPR;
+            document.getElementById("player-stats").style.display = "block";
+        }
     },
     /**
      * Writes all variables to the console. Utility method for debugging
      */
     logOutput : function() {
-        console.log("currentPlayer: " + this.currentPlayer.fullName);
+        console.log("currentPlayer Name: " + this.currentPlayer.fullName);
+        console.log("currentPlayer ID: " + this.currentPlayer.playerId);
+        console.log("currentPlayer Position: " + this.currentPlayer.position);
+        console.log("currentPlayer Team: " + this.currentPlayer.team);
         console.log("wins: " + this.wins);
         console.log("numberOfGuessesRemaining: " + this.numberOfGuessesRemaining);
         console.log("wordDisplay: " + this.wordDisplay);

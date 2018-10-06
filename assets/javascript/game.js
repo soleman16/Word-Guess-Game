@@ -557,13 +557,9 @@ var game = {
     },
     /**
      * Retrieves stats about the current player via an ajax call. This
-     * is the only part of the application where I used jQuery. I made the call
-     * synchronous although I know this is frowned up.
+     * is the only part of the application where I used jQuery.
      * 
      * TODO: 
-     * 
-     * - Need to understand why my ajax call does not have scope to global
-     * variables.
      * 
      * - Need to put in some error handling in case the ajax call is unsucessful
      */
@@ -575,7 +571,6 @@ var game = {
             this.currentPlayer.playerId,
             // api keys (unique to my account) - this should not be in the source code
             headers: { 'Ocp-Apim-Subscription-Key': '0f4c5936b24a49d4b8e7b9f6e1c6c81c' },
-            async: false,
             success: function(result) {
                 callback(result[0], currentPlayer);
             }
@@ -600,7 +595,23 @@ var game = {
         currentPlayer.receivingTouchdowns = result.ReceivingTouchdowns;
         currentPlayer.fumblesLost = result.FumblesLost;
         currentPlayer.fantasyPointsPPR = result.FantasyPointsPPR;
-        return currentPlayer;
+        
+        document.getElementById("team").innerHTML = currentPlayer.team;
+        document.getElementById("jersey-number").innerHTML = currentPlayer.number;
+        document.getElementById("position").innerHTML = currentPlayer.position;
+        document.getElementById("games-played").innerHTML = currentPlayer.gamesPlayed;
+        document.getElementById("passing-yards").innerHTML = currentPlayer.passingYards;
+        document.getElementById("passing-touchdowns").innerHTML = currentPlayer.passingTouchdowns;
+        document.getElementById("interceptions").innerHTML = currentPlayer.interceptions;
+        document.getElementById("rushing-attempts").innerHTML = currentPlayer.rushingAttempts;
+        document.getElementById("rushing-yards").innerHTML = currentPlayer.rushingYards;
+        document.getElementById("rushing-touchdowns").innerHTML = currentPlayer.rushingTouchdowns;
+        document.getElementById("receptions").innerHTML = currentPlayer.receptions;
+        document.getElementById("receiving-yards").innerHTML = currentPlayer.receivingYards;
+        document.getElementById("receiving-touchdowns").innerHTML = currentPlayer.receivingTouchdowns;
+        document.getElementById("fumbles-lost").innerHTML = currentPlayer.fumblesLost;
+        document.getElementById("fantasy-points-ppr").innerHTML = currentPlayer.fantasyPointsPPR;
+        document.getElementById("player-stats").style.display = "block";
     },
     /**
      * Updates the HTML on the page
@@ -610,26 +621,11 @@ var game = {
         document.getElementById("current-word").innerHTML = this.wordDisplay;
         document.getElementById("guesses-remaining").innerHTML = this.numberOfGuessesRemaining;
         document.getElementById("letters-guessed").innerHTML = this.lettersGuessed;
-        document.getElementById("player-stats").style.display = "none";
+
         // removes commas from array
-        if(this.isWordGuessed()){
-            document.getElementById("team").innerHTML = this.currentPlayer.team;
-            document.getElementById("jersey-number").innerHTML = this.currentPlayer.number;
-            document.getElementById("position").innerHTML = this.currentPlayer.position;
-            document.getElementById("games-played").innerHTML = this.currentPlayer.gamesPlayed;
-            document.getElementById("passing-yards").innerHTML = this.currentPlayer.passingYards;
-            document.getElementById("passing-touchdowns").innerHTML = this.currentPlayer.passingTouchdowns;
-            document.getElementById("interceptions").innerHTML = this.currentPlayer.interceptions;
-            document.getElementById("rushing-attempts").innerHTML = this.currentPlayer.rushingAttempts;
-            document.getElementById("rushing-yards").innerHTML = this.currentPlayer.rushingYards;
-            document.getElementById("rushing-touchdowns").innerHTML = this.currentPlayer.rushingTouchdowns;
-            document.getElementById("receptions").innerHTML = this.currentPlayer.receptions;
-            document.getElementById("receiving-yards").innerHTML = this.currentPlayer.receivingYards;
-            document.getElementById("receiving-touchdowns").innerHTML = this.currentPlayer.receivingTouchdowns;
-            document.getElementById("fumbles-lost").innerHTML = this.currentPlayer.fumblesLost;
-            document.getElementById("fantasy-points-ppr").innerHTML = this.currentPlayer.fantasyPointsPPR;
-            document.getElementById("player-stats").style.display = "block";
-        }
+        document.getElementById("letters-guessed").innerHTML = this.lettersGuessed.join(" ");
+
+        document.getElementById("player-stats").style.display = "none";
     },
     /**
      * Writes all variables to the console. Utility method for debugging
